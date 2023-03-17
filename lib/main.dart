@@ -1,3 +1,4 @@
+import 'package:first_project/screens/auth_screen.dart';
 import 'package:first_project/screens/welcome_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
         primaryColor:const Color.fromRGBO(13, 31, 45, 1),
       // canvasColor: const Color.fromARGB(255, 255, 207, 250),
       ),
-      home: const WelcomeScreen(),
+      home: const AuthScreen(),
     );
   }
 }
