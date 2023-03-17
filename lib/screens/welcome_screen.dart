@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class WelcomeScreen extends StatelessWidget {
+  static const routeName = '/welcome';
   const WelcomeScreen({super.key});
 
   @override
@@ -25,6 +26,7 @@ class WelcomeScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             
             children: [
+              
               Container(
                 padding: const EdgeInsets.all(20),
                 // decoration: BoxDecoration(
@@ -35,6 +37,19 @@ class WelcomeScreen extends StatelessWidget {
                 child:const  Text('Welcome!', style: TextStyle(fontFamily: 'Raleway', fontSize: 50, color: Colors.white, fontWeight: FontWeight.w700),),),
                 const SizedBox(height: 100,),
                 Container(
+                  width: 330,
+                  
+                  decoration: BoxDecoration(
+                    color: Theme.of(context).primaryColor,
+                    border: Border.all(width: 1, color: Theme.of(context).primaryColor),
+                    borderRadius:const BorderRadius.all(Radius.circular(20),),
+                  ),
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(backgroundColor: Colors.transparent, foregroundColor: Colors.transparent, shadowColor: Colors.transparent, elevation: 5),
+                    onPressed: (){}, child: const Text('See my TODOs', style: TextStyle(fontFamily: 'Raleway', fontSize: 25, color: Colors.white)))),
+                const SizedBox(height: 50,)
+,                Container(
+  width: 330,
                   decoration: BoxDecoration(
                     color: Theme.of(context).primaryColor,
                     border: Border.all(width: 1, color: Theme.of(context).primaryColor),
@@ -44,7 +59,7 @@ class WelcomeScreen extends StatelessWidget {
                     
                     style: ElevatedButton.styleFrom(backgroundColor: Colors.transparent, foregroundColor: Colors.transparent, shadowColor: Colors.transparent, elevation: 5),
                     onPressed: (){}, 
-                    child: const Text('Add new TODO', style: TextStyle(fontFamily: 'Raleway', fontSize: 30, color: Colors.white),),),
+                    child: const Text('Add new TODO', style: TextStyle(fontFamily: 'Raleway', fontSize: 25, color: Colors.white),),),
                 ),
             ],
           ),

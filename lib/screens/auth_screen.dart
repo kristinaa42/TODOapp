@@ -1,3 +1,4 @@
+import 'package:first_project/screens/welcome_screen.dart';
 import 'package:flutter/material.dart';
 
 class AuthScreen extends StatelessWidget {
@@ -30,6 +31,8 @@ class AuthScreen extends StatelessWidget {
               decoration: BoxDecoration(borderRadius: BorderRadius.circular(20), color: const Color.fromARGB(255, 184, 184, 175),
                   border: Border.all(width: 1, color: Theme.of(context).primaryColor),),
               child: TextFormField(
+                keyboardType: TextInputType.emailAddress,
+                textCapitalization: TextCapitalization.none,
                 decoration:const InputDecoration(hintText: 'Email',hintStyle: TextStyle(fontSize: 18, fontFamily: 'Raleway'), border: InputBorder.none, prefixIcon: Icon(Icons.person_2_outlined)),
               ),),
              const SizedBox(height: 20,),
@@ -38,7 +41,10 @@ class AuthScreen extends StatelessWidget {
               width: 330,
               decoration: BoxDecoration(borderRadius: BorderRadius.circular(20),  color: const Color.fromARGB(255, 184, 184, 175),
                   border: Border.all(width: 1, color: Theme.of(context).primaryColor),),
-              child: TextFormField(decoration:const InputDecoration(hintText: 'Password',hintStyle: TextStyle(fontSize: 18, fontFamily: 'Raleway'), border: InputBorder.none, prefixIcon: Icon(Icons.key)),)),
+              child: TextFormField(
+                obscureText: true,
+                textCapitalization: TextCapitalization.none,
+                decoration:const InputDecoration(hintText: 'Password',hintStyle: TextStyle(fontSize: 18, fontFamily: 'Raleway'), border: InputBorder.none, prefixIcon: Icon(Icons.key)),)),
             const SizedBox(height: 20,),
             
           ],
@@ -53,7 +59,9 @@ class AuthScreen extends StatelessWidget {
                   ),
               child: ElevatedButton(
                style: ElevatedButton.styleFrom(backgroundColor: Colors.transparent, foregroundColor: Colors.transparent, shadowColor: Colors.transparent, elevation: 5),
-                onPressed: (){}, child: const Text('Log In', style: TextStyle(color: Colors.white, fontSize: 20, fontFamily: 'Raleway'),
+                onPressed: (){
+                  Navigator.of(context).pushReplacementNamed(WelcomeScreen.routeName);
+                }, child: const Text('Log In', style: TextStyle(color: Colors.white, fontSize: 20, fontFamily: 'Raleway'),
                 ),
                 ),
                 ),
